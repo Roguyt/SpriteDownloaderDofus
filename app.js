@@ -27,7 +27,6 @@ function main(url) {
 			http.get(href[i], (res) => {
 				res.pipe(file).on('close', () => {
 					console.log('Done.');
-					let dim = sizeOf('./output/' + name + i + '.png');
 					exec.execFileSync('cmd.bat', [
 							name + i
 						], {
