@@ -1,0 +1,6 @@
+node_modules
+bower_components
+public/build
+test
+tests
+sftp-config.json
