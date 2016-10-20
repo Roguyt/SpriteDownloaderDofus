@@ -1,0 +1,3 @@
+# SpriteDownloaderDofus
+
+TODO: Readme
