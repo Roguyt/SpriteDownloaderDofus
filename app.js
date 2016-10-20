@@ -4,7 +4,6 @@ const request = require('request');
 const http = require('http');
 const cheerio = require('cheerio');
 const exec = require('child_process');
-const sizeOf = require('image-size');
 const prompt = require('prompt');
 
 prompt.start();
@@ -29,13 +28,8 @@ function main(url) {
 				res.pipe(file).on('close', () => {
 					console.log('Done.');
 					let dim = sizeOf('./output/' + name + i + '.png');
-					dim = dim.width / 195;
-					let delay = 120 / dim;
-					console.log(dim);
-					console.log(delay);
 					exec.execFileSync('cmd.bat', [
-							name + i,
-							delay
+							name + i
 						], {
 							cwd: './output'
 						}, (err, stdout, stderr) => {
